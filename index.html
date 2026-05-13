@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathan Rullier — Creative Technologist</title>
+  <meta name="description" content="Portfolio of Nathan Rullier — Creative Technologist. AI systems, interactive experiences, generative media, and cross-platform engineering." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░░ CANVAS BACKGROUND ░░░ -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ░░░ NAV ░░░ -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">NR<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ░░░ HERO ░░░ -->
+  <section id="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow" data-reveal>Montreal, QC</p>
+      <h1 class="hero-name" data-reveal>Nathan<br><span class="accent">Rullier</span></h1>
+      <p class="hero-title" data-reveal>Creative Technologist<span class="cursor-blink">_</span></p>
+      <p class="hero-sub" data-reveal>
+        I build systems where AI, code, and lived experience collide —<br>
+        from generative image pipelines that run entirely on-device<br>
+        to interactive stories told through physics and light.
+      </p>
+      <div class="hero-cta" data-reveal>
+        <a href="#projects" class="btn btn-primary">See the work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" data-reveal>
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ░░░ ABOUT ░░░ -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title" data-reveal>About</h2>
+          <p data-reveal>
+            I'm a bilingual (FR/EN) full-stack developer with a Master's in AI, working at the intersection of software engineering and creative technology. My day job is building large-scale media platforms; my real obsession is making technology feel like magic.
+          </p>
+          <p data-reveal>
+            I've shipped fully offline AI pipelines for mobile and desktop, co-designed puzzle games at hackathons, built Arduino costumes for the stage, and spent far too many hours figuring out how to make stable-diffusion run on a phone.
+          </p>
+          <p data-reveal>
+            I'm drawn to projects where the technical constraint <em>becomes</em> the creative medium — where running entirely offline isn't a limitation, it's the point.
+          </p>
+          <div class="about-tags" data-reveal>
+            <span>GenAI</span><span>Physical Computing</span><span>Immersive Media</span>
+            <span>Real-Time Rendering</span><span>Cross-Platform</span><span>Game Dev</span>
+          </div>
+        </div>
+        <div class="about-aside" data-reveal>
+          <div class="fact-card">
+            <span class="fact-num">5+</span>
+            <span class="fact-label">years pro experience</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">M.Sc.</span>
+            <span class="fact-label">Artificial Intelligence</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">3</span>
+            <span class="fact-label">AI models, 1 app, fully offline</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">✦</span>
+            <span class="fact-label">Close-up magician (yes, really)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ PROJECTS ░░░ -->
+  <section id="projects">
+    <div class="section-inner">
+      <h2 class="section-title" data-reveal>Projects</h2>
+
+      <!-- FEATURED PROJECT -->
+      <div class="project-featured" data-reveal>
+        <div class="project-featured-meta">
+          <span class="project-tag">Featured</span>
+          <span class="project-tag">GenAI</span>
+          <span class="project-tag">Cross-Platform</span>
+          <span class="project-tag">Offline AI</span>
+        </div>
+        <div class="project-featured-content">
+          <div class="project-featured-text">
+            <h3>D&amp;D Scene Generator</h3>
+            <p class="project-tech">Flutter · whisper.cpp · llama.cpp · stable-diffusion.cpp · Dart FFI · C/C++</p>
+            <p>
+              A cross-platform app that listens to spoken tabletop RPG narration and generates
+              images of the scene in real-time — <strong>100% offline, on-device</strong>.
+              Speech is transcribed with whisper.cpp; a local LLM (llama.cpp) detects new locations
+              from the narrative; stable-diffusion.cpp generates an image from a prompt built
+              from the scene description, your chosen art style, and character likenesses.
+            </p>
+            <ul class="project-bullets">
+              <li>Three separate on-device AI models coordinated in a real-time pipeline</li>
+              <li>Runs on Windows, Linux, Android, and iOS — same codebase</li>
+              <li>Model selector: choose speed vs quality trade-off per device</li>
+              <li>PhotoMaker integration for consistent character likenesses across scenes</li>
+              <li>Custom Dart FFI layer binding to stable-diffusion.cpp across all platforms</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/NathanRullier/dnd-scene-generator" target="_blank" rel="noopener" class="btn btn-sm">GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project-featured-visual">
+            <div class="ai-pipeline-viz">
+              <div class="pipeline-node node-mic">
+                <div class="node-icon">🎙️</div>
+                <span>Mic Input</span>
+              </div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-node node-stt">
+                <div class="node-icon">〜</div>
+                <span>whisper.cpp<br><em>Speech→Text</em></span>
+              </div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-node node-llm">
+                <div class="node-icon">⬡</div>
+                <span>llama.cpp<br><em>Scene Detection</em></span>
+              </div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-node node-sd">
+                <div class="node-icon">◈</div>
+                <span>stable-diffusion<br><em>Image Gen</em></span>
+              </div>
+              <div class="pipeline-badge">All on-device · No cloud</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT GRID -->
+      <div class="project-grid">
+
+        <div class="project-card" data-reveal>
+          <div class="project-card-header">
+            <div class="project-card-tags">
+              <span class="project-tag">Game Dev</span>
+              <span class="project-tag">Hackathon</span>
+              <span class="project-tag">Godot</span>
+            </div>
+            <span class="project-card-year">2024</span>
+          </div>
+          <h3>La Légende de Jean-Nathan</h3>
+          <p>
+            A puzzle game built in 48 hours at the <em>Game Jam de Québec 2024</em> with a friend.
+            Dynamic music that changes with the world-state, hand-crafted art, and a dual-world
+            mechanic that earned praise from the judges for its narrative design.
+          </p>
+          <p class="project-tech">Godot · GDScript · 2D puzzle design</p>
+          <div class="project-links">
+            <a href="https://nathanrullier.itch.io/la-lgende-de-jeannathan" target="_blank" rel="noopener" class="btn btn-sm">Play on itch.io ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-reveal>
+          <div class="project-card-header">
+            <div class="project-card-tags">
+              <span class="project-tag">WebGL</span>
+              <span class="project-tag">Interactive</span>
+              <span class="project-tag">3D</span>
+            </div>
+            <span class="project-card-year">2023</span>
+          </div>
+          <h3>3D Spot-the-Difference</h3>
+          <p>
+            An interactive web-based media piece — a spot-the-difference game rendered entirely
+            in WebGL. Custom 3D assets, real-time rendering, and synchronized state
+            designed as an experience first, a game second.
+          </p>
+          <p class="project-tech">Three.js · WebGL · JavaScript</p>
+        </div>
+
+        <div class="project-card" data-reveal>
+          <div class="project-card-header">
+            <div class="project-card-tags">
+              <span class="project-tag">Physical Computing</span>
+              <span class="project-tag">Wearable</span>
+              <span class="project-tag">Arduino</span>
+            </div>
+            <span class="project-card-year">2022</span>
+          </div>
+          <h3>Interactive Stage Costumes</h3>
+          <p>
+            Arduino-driven wearable costumes designed for live performance — lights and effects
+            triggered by movement and sound. Also built a portable Fibonacci sequence clock
+            as a daily-carry object where code meets craft.
+          </p>
+          <p class="project-tech">Arduino · C++ · Electronics · Wearables</p>
+        </div>
+
+        <div class="project-card" data-reveal>
+          <div class="project-card-header">
+            <div class="project-card-tags">
+              <span class="project-tag">Machine Learning</span>
+              <span class="project-tag">NLP</span>
+              <span class="project-tag">Computer Vision</span>
+            </div>
+            <span class="project-card-year">2021–</span>
+          </div>
+          <h3>ML Experiments</h3>
+          <p>
+            Ongoing explorations: playing-card recognition with TensorFlow (computer vision),
+            a text-learning app using spaCy (NLP), and continuous experiments with modern LLMs
+            as creative tools for narrative and generative content.
+          </p>
+          <p class="project-tech">TensorFlow · spaCy · Python · LLMs</p>
+        </div>
+
+        <div class="project-card" data-reveal>
+          <div class="project-card-header">
+            <div class="project-card-tags">
+              <span class="project-tag">Robotics</span>
+              <span class="project-tag">Embedded</span>
+              <span class="project-tag">Real-Time</span>
+            </div>
+            <span class="project-card-year">2020</span>
+          </div>
+          <h3>Autonomous Line-Following Robot</h3>
+          <p>
+            Low-level embedded engineering on ATmega324PA — sensor reading, real-time control
+            loops, and motor actuation without an OS. Built for the CRC Robotics competition.
+          </p>
+          <p class="project-tech">C · ATmega324PA · Sensors · Control systems</p>
+        </div>
+
+        <div class="project-card project-card-pro" data-reveal>
+          <div class="project-card-header">
+            <div class="project-card-tags">
+              <span class="project-tag">Professional</span>
+              <span class="project-tag">AI Integration</span>
+              <span class="project-tag">Full-Stack</span>
+            </div>
+            <span class="project-card-year">2024–now</span>
+          </div>
+          <h3>AI-Augmented Media Platform</h3>
+          <p>
+            At Stingray Group: designed and shipped third-party API integrations, NLP microservices
+            for multilingual content-safety detection, and Python tooling for AI-assisted
+            content analysis — bridging R&amp;D prototypes into production.
+          </p>
+          <p class="project-tech">Java · Spring Boot · Python · MySQL · TypeScript · Docker · GitLab CI/CD</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ SKILLS ░░░ -->
+  <section id="skills">
+    <div class="section-inner">
+      <h2 class="section-title" data-reveal>Skills &amp; Tools</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group" data-reveal>
+          <h4>GenAI &amp; ML</h4>
+          <ul>
+            <li>stable-diffusion.cpp (local SD)</li>
+            <li>llama.cpp (local LLMs)</li>
+            <li>whisper.cpp (on-device STT)</li>
+            <li>TensorFlow / Keras</li>
+            <li>spaCy (NLP)</li>
+            <li>Gemini API</li>
+            <li>Prompt engineering</li>
+          </ul>
+        </div>
+
+        <div class="skill-group" data-reveal>
+          <h4>Creative &amp; Interactive</h4>
+          <ul>
+            <li>Three.js / WebGL</li>
+            <li>Godot / GDScript</li>
+            <li>Unity (C#)</li>
+            <li>GLSL Shaders</li>
+            <li>Arduino / Physical computing</li>
+            <li>p5.js / Processing</li>
+            <li>Figma → code</li>
+          </ul>
+        </div>
+
+        <div class="skill-group" data-reveal>
+          <h4>Languages</h4>
+          <ul>
+            <li>Python</li>
+            <li>Java / Spring Boot</li>
+            <li>TypeScript / JavaScript</li>
+            <li>Dart / Flutter</li>
+            <li>C / C++</li>
+            <li>C# (Unity)</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+
+        <div class="skill-group" data-reveal>
+          <h4>Platforms &amp; DevOps</h4>
+          <ul>
+            <li>Docker / Containerization</li>
+            <li>GitLab CI/CD</li>
+            <li>Linux server environments</li>
+            <li>REST API design</li>
+            <li>React / Vue / Nuxt</li>
+            <li>Node.js / Express</li>
+            <li>MySQL / Hive</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ EXTRA ░░░ -->
+  <section id="extra">
+    <div class="section-inner">
+      <h2 class="section-title" data-reveal>Beyond the screen</h2>
+      <div class="extra-grid">
+        <div class="extra-item" data-reveal>
+          <span class="extra-icon">🃏</span>
+          <h4>Close-up magician</h4>
+          <p>Professional-level sleight of hand performed at private events. Misdirection, timing, and presence — useful in more ways than one.</p>
+        </div>
+        <div class="extra-item" data-reveal>
+          <span class="extra-icon">🎵</span>
+          <h4>Volunteer performer</h4>
+          <p>Choir and live performances presented in retirement homes. Technology should serve people — this is the reminder.</p>
+        </div>
+        <div class="extra-item" data-reveal>
+          <span class="extra-icon">🏫</span>
+          <h4>Community builder</h4>
+          <p>Founded the CS club at Cégep Bois-de-Boulogne. Organized multiple hackathons and collegiate events. Tutoring at a school for children with intellectual disabilities.</p>
+        </div>
+        <div class="extra-item" data-reveal>
+          <span class="extra-icon">🏆</span>
+          <h4>Competitor</h4>
+          <p>Jeux de génie du Québec. CRC Robotics Challenge. Multiple hackathons. I build better under pressure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ CONTACT ░░░ -->
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title" data-reveal>Let's build something.</h2>
+      <p class="contact-sub" data-reveal>
+        Open to creative technologist roles in Montréal. Bilingual FR/EN.<br>
+        Especially excited about projects where technology serves storytelling.
+      </p>
+      <div class="contact-links" data-reveal>
+        <a href="mailto:nathan.rullier@gmail.com" class="contact-link">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-value">nathan.rullier@gmail.com</span>
+        </a>
+        <a href="https://github.com/NathanRullier" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">GitHub</span>
+          <span class="contact-link-value">NathanRullier</span>
+        </a>
+        <a href="https://nathanrullier.itch.io" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">itch.io</span>
+          <span class="contact-link-value">nathanrullier</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░ FOOTER ░░░ -->
+  <footer>
+    <div class="footer-inner">
+      <span>Nathan Rullier · 2026</span>
+      <span>Montréal, QC</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
