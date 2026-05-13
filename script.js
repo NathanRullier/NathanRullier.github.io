@@ -33,7 +33,7 @@
     particles = Array.from({ length: COUNT }, createParticle);
   }
 
-  let mouseX = W / 2, mouseY = H / 2;
+  let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
