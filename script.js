@@ -10,15 +10,14 @@
       'nav-contact':      'Contact',
 
       'hero-title':       'Full-Stack Developer',
-      'hero-sub':         'I turn conceptual ideas into working prototypes — quickly, cleanly,<br>with just enough robustness to hold in demo and evolve into production.',
       'hero-cta-primary': 'See the work',
       'hero-cta-ghost':   'Get in touch',
-      'hero-scroll':      'scroll',
 
       'about-title': 'About',
       'about-p1':    "Software engineer with a Master's in AI from Polytechnique Montréal, with 3+ years building production back-ends in Node.js, Java, and Python. At Stingray I ship services powering a catalogue of millions of music assets; at Loto-Québec I built Node.js services and Vue/Nuxt interfaces deployed continuously.",
       'about-p2':    "What drives me is the moment a conceptual idea becomes a working prototype — quickly, cleanly, with just enough robustness to hold in demo and evolve into production.",
       'about-p3':    "Multidisciplinary environments, at the crossroads of brand creativity and emerging technology, are exactly where I want to work.",
+
       'fact-1':      'years pro experience',
       'fact-2':      'Artificial Intelligence',
       'fact-3':      'AI models, 1 app, fully offline',
@@ -93,15 +92,13 @@
       'nav-contact':      `Contact`,
 
       'hero-title':       `Développeur Full-Stack`,
-      'hero-sub':         `Je transforme les idées conceptuelles en prototypes fonctionnels — rapidement, proprement,<br>avec juste assez de robustesse pour tenir en démo et évoluer en production.`,
       'hero-cta-primary': `Voir les projets`,
       'hero-cta-ghost':   `Me contacter`,
-      'hero-scroll':      `défiler`,
 
       'about-title': `À propos`,
       'about-p1':    `Ingénieur logiciel diplômé d'une maîtrise en intelligence artificielle à Polytechnique Montréal, avec plus de 3 ans à bâtir des back-ends de production en Node.js, Java et Python. Chez Stingray, je livre des services qui alimentent un catalogue de millions d'actifs musicaux ; chez Loto-Québec, j'ai conçu des services Node.js et des interfaces Vue/Nuxt déployées en continu.`,
       'about-p2':    `Ce qui m'anime, c'est le moment où une idée conceptuelle devient un prototype fonctionnel : rapidement, proprement, avec juste assez de robustesse pour tenir en démo et évoluer en production.`,
-      'about-p3':    `L'environnement multidisciplinaire de Sid Lee, à la croisée de la créativité de marque et des technologies émergentes, correspond exactement au type de travail dans lequel je veux m'inscrire.`,
+      'about-p3':    ``,
       'fact-1':      `ans d'expérience pro`,
       'fact-2':      `Intelligence artificielle`,
       'fact-3':      `modèles IA, 1 app, hors ligne`,
@@ -183,12 +180,20 @@
     // text content
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (dict[key] !== undefined) el.textContent = dict[key];
+      if (dict[key] !== undefined) {
+        el.textContent = dict[key];
+        if (el.hasAttribute('data-hide-when-empty'))
+          el.style.display = dict[key] === '' ? 'none' : '';
+      }
     });
     // innerHTML (for elements with <br>, <strong>, <em>)
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
       const key = el.getAttribute('data-i18n-html');
-      if (dict[key] !== undefined) el.innerHTML = dict[key];
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+        if (el.hasAttribute('data-hide-when-empty'))
+          el.style.display = dict[key] === '' ? 'none' : '';
+      }
     });
 
     // Update toggle active state
